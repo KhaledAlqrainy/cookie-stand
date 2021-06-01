@@ -125,7 +125,7 @@ function footerrow (){
 
 footerrow();
 
-function randomValue(min, max) {
+/*function randomValue(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -391,7 +391,7 @@ const lima = {
 
 lima.randomcus();
 lima.randomcookie();
-lima.render();
+lima.render();*/
 
 
 
