@@ -125,6 +125,27 @@ function footerrow (){
 
 footerrow();
 
+
+const cityform = document.getElementById('Cityinfo'); 
+cityform.addEventListener('submit', handler);
+{
+
+function handler(event){
+
+  event.preventDefault();
+
+  let name = event.target.cityname.value;
+  let minmum = event.target.min.value;
+  let maximum = event.target.max.value;
+  let avarge = event.target.avg.value;
+
+  let cityy = new Sales(name, minmum, maximum, avarge);
+
+}
+
+cityy.randomcookie();
+cityy.randomcus();
+cityy.render();
 /*function randomValue(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
