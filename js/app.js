@@ -104,6 +104,29 @@ for ( let i=0; i < objectarr.length; i++){
   objectarr[i].render();
 }
 
+function handler(event){
+
+
+  event.preventDefault();
+  console.log(event.target.Cityname.value);
+  let name = event.target.Cityname.value;
+  
+  let minmum = event.target.Min.value;
+  console.log(event.target.Min.value);
+  let maximum = event.target.Max.value;
+  console.log(event.target.Max.value);
+  let avarge = event.target.Avg.value;
+  console.log(event.target.Avg.value);
+
+  let cityy = new Sales(name, minmum, maximum, avarge);
+  console.log(cityy);
+  
+  cityy.randomcus();
+  cityy.randomcookie();
+  console.log(cityy.randomcookie());
+  cityy.render();
+}
+
 function footerrow (){
   let lastrow = document.createElement('tr');
   table.appendChild(lastrow);
@@ -129,6 +152,13 @@ function footerrow (){
 }
 
 footerrow();
+
+
+const cityform = document.getElementById('Cityinfo'); 
+cityform.addEventListener('submit', handler);
+
+
+
 
 /*function randomValue(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
