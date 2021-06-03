@@ -110,6 +110,7 @@ function footerrow (){
   let firstcell = document.createElement('th');
   lastrow.appendChild(firstcell);
   firstcell.textContent = 'totals';
+  let alltotal =0;
 
   for ( let i =0; i< ophrs.length; i++){
     let sum =0;
@@ -118,8 +119,12 @@ function footerrow (){
     let td = document.createElement('td');
     lastrow.appendChild(td);
     td.textContent= sum;
+    alltotal = alltotal + sum;
 
   }
+  let totals = document.createElement('th');
+  lastrow.appendChild(totals);
+  totals.textContent = alltotal;
 
 }
 
