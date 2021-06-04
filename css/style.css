@@ -1,0 +1,37 @@
+header {
+    background-color: purple;
+}
+
+h1 {
+    color: darkred;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    color: darkred;
+    font-size: large;
+    padding: 50px;
+}
+
+main {
+    background-color: darksalmon;
+}
+
+h2 
+{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+ .names {
+     font-family: sans-serif;
+ }
+
+
+ footer {
+     background-color: rosybrown;
+     text-align: center;
+ }
+
+ 
