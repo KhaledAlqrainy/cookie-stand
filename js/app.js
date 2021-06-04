@@ -104,11 +104,45 @@ for ( let i=0; i < objectarr.length; i++){
   objectarr[i].render();
 }
 
+
+
+function footerrow (){
+  let lastrow = document.createElement('tr');
+  table.appendChild(lastrow);
+  let firstcell = document.createElement('th');
+  lastrow.appendChild(firstcell);
+  firstcell.textContent = 'totals';
+  let alltotal =0;
+
+  
+  for ( let i =0; i< ophrs.length; i++){
+   let sum=0;
+    sum= seattle.cookiehrly[i] + tokyo.cookiehrly[i] + dubai.cookiehrly[i] + paris.cookiehrly[i] + lima.cookiehrly[i];
+
+    let td = document.createElement('td');
+    lastrow.appendChild(td);
+    td.textContent= sum;
+    alltotal = alltotal + sum;
+
+  }
+  // let newr = document.createElement('th');
+  // trr.appendChild(newr);
+  // newr.textContent = alltotal;
+
+  
+
+}
+
+footerrow();
+
+
+let cityform = document.getElementById('Cityinfo'); 
+cityform.addEventListener('submit', handler);
+
 function handler(event){
 
 
   event.preventDefault();
-  console.log(event.target.Cityname.value);
   let name = event.target.Cityname.value;
   
   let minmum = event.target.Min.value;
@@ -119,43 +153,29 @@ function handler(event){
   console.log(event.target.Avg.value);
 
   let cityy = new Sales(name, minmum, maximum, avarge);
-  console.log(cityy);
+
+    // var table = document.getElementById('table');
+    // for ( let i=0; i<ophrs; i++){
+
+    
+    // var newrow = table.insertRow(6);
+    // var newcell = newrow.insertCell(0);
+  
+  
+    // newcell.innerHTML = "ijoicityy";
+    // } 
+    
+  
+
   
   cityy.randomcus();
   cityy.randomcookie();
-  console.log(cityy.randomcookie());
+  table.deleteRow(table.rows.length -1);
   cityy.render();
+ 
 }
 
-function footerrow (){
-  let lastrow = document.createElement('tr');
-  table.appendChild(lastrow);
-  let firstcell = document.createElement('th');
-  lastrow.appendChild(firstcell);
-  firstcell.textContent = 'totals';
-  let alltotal =0;
 
-  for ( let i =0; i< ophrs.length; i++){
-    let sum =0;
-    sum= seattle.cookiehrly[i] + tokyo.cookiehrly[i] + dubai.cookiehrly[i] + paris.cookiehrly[i] + lima.cookiehrly[i]
-
-    let td = document.createElement('td');
-    lastrow.appendChild(td);
-    td.textContent= sum;
-    alltotal = alltotal + sum;
-
-  }
-  let totals = document.createElement('th');
-  lastrow.appendChild(totals);
-  totals.textContent = alltotal;
-
-}
-
-footerrow();
-
-
-const cityform = document.getElementById('Cityinfo'); 
-cityform.addEventListener('submit', handler);
 
 
 
